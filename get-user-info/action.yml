@@ -10,4 +10,4 @@ outputs:
     description: "This will bethe user github information"
 runs:
   using: "node12"
-  main: "src/action.js"
+  main: "dist/index.js"

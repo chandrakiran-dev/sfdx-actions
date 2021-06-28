@@ -6335,7 +6335,7 @@ async function run(){
         username: 'chandrakiran-dev'
     });
     console.log('User data', data);
-    _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput(OUTPUT_USER, data);
+    _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput(OUTPUT_USER, data.data);
 }
 
 run(); 

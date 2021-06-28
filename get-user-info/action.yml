@@ -1,0 +1,13 @@
+name: "Get User Information"
+description: "This will return the user information"
+author: "Chandra Kiran"
+inputs:
+  GITHUB_TOKEN:
+    description: "GitHub token"
+    required: true
+outputs:
+  OUTPUT_USER:
+    description: "This will bethe user github information"
+runs:
+  using: "node12"
+  main: "dist/index.js"

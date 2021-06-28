@@ -6330,7 +6330,7 @@ async function run(){
     const octokit = _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(GITHUB_TOKEN);
     console.log('loaded octokit');
 
-    const { data } = await octokit.request("/user");
+    const { data } = await octokit.request("GET /user");
     console.log('User data', data);
     _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput(OUTPUT_USER, data);
 }

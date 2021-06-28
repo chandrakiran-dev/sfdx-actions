@@ -6,7 +6,7 @@ async function run(){
     const octokit = github.getOctokit(GITHUB_TOKEN);
     console.log('loaded octokit');
 
-    const { data } = await octokit.request("/user");
+    const { data } = await octokit.request("GET /user");
     console.log('User data', data);
     core.setOutput(OUTPUT_USER, data);
 }

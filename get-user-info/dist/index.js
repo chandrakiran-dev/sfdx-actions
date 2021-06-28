@@ -6327,12 +6327,13 @@ __nccwpck_require__.r(__webpack_exports__);
 
 async function run(){
     const GITHUB_TOKEN = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('GITHUB_TOKEN');
+    const USERNAME = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('USERNAME');
     const octokit = new _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(GITHUB_TOKEN);
       
     console.log('loaded octokit');
 
     const data = await octokit.rest.users.getByUsername({
-        username: 'chandrakiran-dev'
+        username: USERNAME
     });
     console.log('User data', data);
     _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('OUTPUT_USER', data.data.email);

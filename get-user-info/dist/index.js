@@ -6400,12 +6400,12 @@ async function run(){
       
     console.log('loaded octokit');
 
-    const { data } = await octokit.request("/user");
+    const { data } = await octokit.request("/users/:username");
     console.log('User data', data);
     _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput(OUTPUT_USER, data);
 }
 
-run();
+run(); 
 })();
 
 module.exports = __webpack_exports__;

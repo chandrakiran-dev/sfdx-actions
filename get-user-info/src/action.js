@@ -11,7 +11,7 @@ async function run(){
       
     console.log('loaded octokit');
 
-    const { data } = await octokit.request("/user");
+    const { data } = await octokit.request("/users/:username");
     console.log('User data', data);
     core.setOutput(OUTPUT_USER, data);
 }

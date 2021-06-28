@@ -5,6 +5,9 @@ inputs:
   GITHUB_TOKEN:
     description: "GitHub token"
     required: true
+  USERNAME:
+    description: "Github Username"
+    required: true
 outputs:
   OUTPUT_USER:
     description: "This will bethe user github information"

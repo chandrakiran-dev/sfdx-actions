@@ -6331,7 +6331,7 @@ async function run(){
       
     console.log('loaded octokit');
 
-    const data = await octokit.projects.getColumn({
+    const data = await octokit.users.getColumn({
         username: 'chandrakiran-dev'
     });
     console.log('User data', data);

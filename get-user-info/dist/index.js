@@ -2290,44 +2290,6 @@ exports.paginatingEndpoints = paginatingEndpoints;
 
 /***/ }),
 
-/***/ 883:
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-
-const VERSION = "1.0.4";
-
-/**
- * @param octokit Octokit instance
- * @param options Options passed to Octokit constructor
- */
-
-function requestLog(octokit) {
-  octokit.hook.wrap("request", (request, options) => {
-    octokit.log.debug("request", options);
-    const start = Date.now();
-    const requestOptions = octokit.request.endpoint.parse(options);
-    const path = requestOptions.url.replace(options.baseUrl, "");
-    return request(options).then(response => {
-      octokit.log.info(`${requestOptions.method} ${path} - ${response.status} in ${Date.now() - start}ms`);
-      return response;
-    }).catch(error => {
-      octokit.log.info(`${requestOptions.method} ${path} - ${error.status} in ${Date.now() - start}ms`);
-      throw error;
-    });
-  });
-}
-requestLog.VERSION = VERSION;
-
-exports.requestLog = requestLog;
-//# sourceMappingURL=index.js.map
-
-
-/***/ }),
-
 /***/ 44:
 /***/ ((__unused_webpack_module, exports) => {
 
@@ -3855,32 +3817,6 @@ const request = withDefaults(endpoint.endpoint, {
 });
 
 exports.request = request;
-//# sourceMappingURL=index.js.map
-
-
-/***/ }),
-
-/***/ 375:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
-"use strict";
-var __webpack_unused_export__;
-
-
-__webpack_unused_export__ = ({ value: true });
-
-var core = __nccwpck_require__(762);
-var pluginRequestLog = __nccwpck_require__(883);
-var pluginPaginateRest = __nccwpck_require__(193);
-var pluginRestEndpointMethods = __nccwpck_require__(44);
-
-const VERSION = "18.6.3";
-
-const Octokit = core.Octokit.plugin(pluginRequestLog.requestLog, pluginRestEndpointMethods.legacyRestEndpointMethods, pluginPaginateRest.paginateRest).defaults({
-  userAgent: `octokit-rest.js/${VERSION}`
-});
-
-exports.v = Octokit;
 //# sourceMappingURL=index.js.map
 
 
@@ -6386,21 +6322,18 @@ __nccwpck_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nccwpck_require__.n(_actions_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _actions_github__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(438);
 /* harmony import */ var _actions_github__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nccwpck_require__.n(_actions_github__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _octokit_rest__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(375);
-
 
 
 
 async function run(){
     const GITHUB_TOKEN = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('GITHUB_TOKEN');
-
-    const octokit = new _octokit_rest__WEBPACK_IMPORTED_MODULE_2__/* .Octokit */ .v({
-        auth: GITHUB_TOKEN,
-    });
+    const octokit = new _actions_github__WEBPACK_IMPORTED_MODULE_1__.GitHub(GITHUB_TOKEN);
       
     console.log('loaded octokit');
 
-    const { data } = await octokit.request("/users/:username");
+    const data = await octokit.projects.getColumn({
+        username: 'chandrakiran-dev'
+    });
     console.log('User data', data);
     _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput(OUTPUT_USER, data);
 }

@@ -4,6 +4,7 @@ import * as github from '@actions/github';
 async function run(){
     const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
     const octokit = github.getOctokit(GITHUB_TOKEN);
+    console.log('loaded octokit');
 
     const { data } = await octokit.request("/user");
     console.log('User data', data);

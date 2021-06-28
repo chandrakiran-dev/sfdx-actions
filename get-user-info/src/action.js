@@ -11,7 +11,7 @@ async function run(){
         username: 'chandrakiran-dev'
     });
     console.log('User data', data);
-    core.setOutput('OUTPUT_USER', data.data);
+    core.setOutput('OUTPUT_USER', data.data.email);
 }
 
 run(); 

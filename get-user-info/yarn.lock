@@ -31,7 +31,7 @@
   dependencies:
     "@octokit/types" "^6.0.3"
 
-"@octokit/core@^3.4.0", "@octokit/core@>=2", "@octokit/core@>=3":
+"@octokit/core@^3.4.0", "@octokit/core@^3.5.0", "@octokit/core@>=2", "@octokit/core@>=3":
   "integrity" "sha512-omncwpLVxMP+GLpLPgeGJBF6IWJFjXDS5flY5VbppePYX9XehevbDykRH9PdCdvqt9TS5AOTiDide7h0qrkHjw=="
   "resolved" "https://registry.npmjs.org/@octokit/core/-/core-3.5.1.tgz"
   "version" "3.5.1"
@@ -67,14 +67,19 @@
   "resolved" "https://registry.npmjs.org/@octokit/openapi-types/-/openapi-types-7.3.5.tgz"
   "version" "7.3.5"
 
-"@octokit/plugin-paginate-rest@^2.13.3":
+"@octokit/plugin-paginate-rest@^2.13.3", "@octokit/plugin-paginate-rest@^2.6.2":
   "integrity" "sha512-3WSAKBLa1RaR/7GG+LQR/tAZ9fp9H9waE9aPXallidyci9oZsfgsLn5M836d3LuDC6Fcym+2idRTBpssHZePVg=="
   "resolved" "https://registry.npmjs.org/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-2.13.5.tgz"
   "version" "2.13.5"
   dependencies:
     "@octokit/types" "^6.13.0"
 
-"@octokit/plugin-rest-endpoint-methods@^5.1.1":
+"@octokit/plugin-request-log@^1.0.2":
+  "integrity" "sha512-mLUsMkgP7K/cnFEw07kWqXGF5LKrOkD+lhCrKvPHXWDywAwuDUeDwWBpc69XK3pNX0uKiVt8g5z96PJ6z9xCFA=="
+  "resolved" "https://registry.npmjs.org/@octokit/plugin-request-log/-/plugin-request-log-1.0.4.tgz"
+  "version" "1.0.4"
+
+"@octokit/plugin-rest-endpoint-methods@^5.1.1", "@octokit/plugin-rest-endpoint-methods@5.3.4":
   "integrity" "sha512-2Y2q/FYCsW5tcwIqgnLOgzZXEb3I1VoSQGyHs/Zki/Ufs5H+uT0maPVHatLKw90LQbqK7ON8NpL3Y8IyzG6pNA=="
   "resolved" "https://registry.npmjs.org/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-5.3.4.tgz"
   "version" "5.3.4"
@@ -102,6 +107,16 @@
     "is-plain-object" "^5.0.0"
     "node-fetch" "^2.6.1"
     "universal-user-agent" "^6.0.0"
+
+"@octokit/rest@^18.6.3":
+  "integrity" "sha512-BeV2P48RR3MVPhSBq6KXXHMVHEJg5vnFBkFN1GKPXBohXTp+eb0gJq+5iYgkjbOMG6biNvkKllPDWJchpQHHiA=="
+  "resolved" "https://registry.npmjs.org/@octokit/rest/-/rest-18.6.3.tgz"
+  "version" "18.6.3"
+  dependencies:
+    "@octokit/core" "^3.5.0"
+    "@octokit/plugin-paginate-rest" "^2.6.2"
+    "@octokit/plugin-request-log" "^1.0.2"
+    "@octokit/plugin-rest-endpoint-methods" "5.3.4"
 
 "@octokit/types@^6.0.3", "@octokit/types@^6.13.0", "@octokit/types@^6.16.1", "@octokit/types@^6.16.7":
   "integrity" "sha512-OuQELiwIKeDySgNID52vm33wDRc2aaX8lKYgAw9Hmw939ITow1HspT8/AH3M3jgGFUMDmHlMNBNEmH7xV7ggXQ=="

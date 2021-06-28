@@ -16,4 +16,4 @@ async function run(){
     core.setOutput(OUTPUT_USER, data);
 }
 
-run();
+run(); 

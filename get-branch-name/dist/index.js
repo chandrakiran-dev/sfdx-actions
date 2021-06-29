@@ -6326,6 +6326,7 @@ __nccwpck_require__.r(__webpack_exports__);
 
 
 async function run(){
+    console.log('INSIDE RUN')
     const GITHUB_TOKEN = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('GITHUB_TOKEN');
     const ISSUE_NUMBER = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('ISSUE_NUMBER');
     const octokit = new _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(GITHUB_TOKEN);

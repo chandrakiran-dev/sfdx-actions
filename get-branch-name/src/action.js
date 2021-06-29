@@ -2,6 +2,7 @@ import * as core from '@actions/core';
 import * as github from '@actions/github';
 
 async function run(){
+    console.log('INSIDE RUN')
     const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
     const ISSUE_NUMBER = core.getInput('ISSUE_NUMBER');
     const octokit = new github.getOctokit(GITHUB_TOKEN);

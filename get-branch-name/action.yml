@@ -13,4 +13,4 @@ outputs:
     description: "Branch name."
 runs:
   using: "node12"
-  main: "src/action.js"
+  main: "dist/index.js"

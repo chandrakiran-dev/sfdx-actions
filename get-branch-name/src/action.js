@@ -3,7 +3,7 @@ import * as github from '@actions/github';
 
 async function run(){
     console.log('INSIDE RUN')
-    const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
+    /*const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
     const ISSUE_NUMBER = core.getInput('ISSUE_NUMBER');
     const octokit = new github.getOctokit(GITHUB_TOKEN);
 
@@ -19,7 +19,7 @@ async function run(){
     console.log('data', data)
 
 
-    core.setOutput('BRANCH_NAME', data.title);
+    core.setOutput('BRANCH_NAME', data.title);*/
 }
 
 run(); 

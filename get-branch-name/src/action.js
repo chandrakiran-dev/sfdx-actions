@@ -14,7 +14,7 @@ async function run(){
     
     const { data } = await octokit.rest.issues.get({
         ...context.repository,
-        ISSUE_NUMBER
+        issue_number: ISSUE_NUMBER
     });
 
     console.log('data', data)

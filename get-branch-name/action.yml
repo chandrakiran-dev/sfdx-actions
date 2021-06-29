@@ -1,0 +1,16 @@
+name: "Get Branch Name"
+description: "This will create and return the branch name"
+author: "Chandra Kiran"
+inputs:
+  GITHUB_TOKEN:
+    description: "GitHub token"
+    required: true
+  ISSUE_NUMBER:
+    description: "Issue Number"
+    required: true
+outputs:
+  BRANCH_NAME:
+    description: "Branch name."
+runs:
+  using: "node12"
+  main: "dist/index.js"

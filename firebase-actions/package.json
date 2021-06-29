@@ -10,6 +10,8 @@
     "author": "Chandra Kiran",
     "license": "MIT",
     "dependencies": {
-        "@vercel/ncc": "^0.28.6"
+        "@actions/core": "^1.4.0",
+        "@vercel/ncc": "^0.28.6",
+        "googleapis": "^78.0.0"
     }
 }

@@ -6341,7 +6341,7 @@ async function run(){
     });
 
     const branchName = 'feature/' + data.title.replace(/ /g, '-').replace(/[/g, '').replace(/]/g, '-') + '-' + ISSUE_NUMBER
-    _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('BRANCH_NAME','feature/test-Update-Hello-World-Label-3');
+    _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('BRANCH_NAME',branchName);
 }
 
 run(); 

@@ -6340,7 +6340,7 @@ async function run(){
         issue_number: ISSUE_NUMBER
     });
 
-    const branchName = 'feature/' + PROJECT_PREFIX + '-' + ISSUE_NUMBER + '-' + data.title.replace(/ /g, '-')
+    const branchName = 'feature/' + ISSUE_NUMBER + '-' + data.title.replace(/ /g, '-')
     _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('BRANCH_NAME',branchName);
 }
 

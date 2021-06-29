@@ -16,7 +16,7 @@ async function run(){
         issue_number: ISSUE_NUMBER
     });
 
-    const branchName = 'feature/' + ISSUE_NUMBER + '-' + data.title.replace(/ /g, '-')
+    const branchName = 'feature/' + data.title.replace(/ /g, '-') + '-' + ISSUE_NUMBER
     core.setOutput('BRANCH_NAME',branchName);
 }
 

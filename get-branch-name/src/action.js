@@ -7,11 +7,15 @@ async function run(){
     const octokit = new github.getOctokit(GITHUB_TOKEN);
 
     const {context = {}} = github;
-
+    console.log('context', ...context.repo)
+    console.log('GITHUB_TOKEN', GITHUB_TOKEN)
+    console.log('ISSUE_NUMBER', ISSUE_NUMBER)
     const { data } = await octokit.rest.issues.get({
         ...context.repo,
         ISSUE_NUMBER
     });
+
+    console.log('data', data)
 
 
     core.setOutput('BRANCH_NAME', data.title);

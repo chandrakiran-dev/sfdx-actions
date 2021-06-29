@@ -1,0 +1,22 @@
+name: "Firebase Actions"
+description: "This will integrate with firebase"
+author: "Chandra Kiran"
+inputs:
+  FIREBASE_TOKEN:
+    description: "Firebase token"
+    required: true
+  ACTION:
+    description: "Action to perform"
+    required: true
+  KEY:
+    description: "KEY"
+    required: true
+  VALUE:
+    description: "VALUE"
+    required: true
+outputs:
+  VALUE:
+    description: "Output for the get action."
+runs:
+  using: "node12"
+  main: "dist/index.js"

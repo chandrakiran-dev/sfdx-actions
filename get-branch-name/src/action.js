@@ -12,15 +12,15 @@ async function run(){
     const {context = {}} = github;
     console.log('context', context)
     
-    /*const { data } = await octokit.rest.issues.get({
-        ...context.repo,
+    const { data } = await octokit.rest.issues.get({
+        ...context.repository,
         ISSUE_NUMBER
     });
 
     console.log('data', data)
 
 
-    core.setOutput('BRANCH_NAME', data.title);*/
+    core.setOutput('BRANCH_NAME', data.title);
 }
 
 run(); 

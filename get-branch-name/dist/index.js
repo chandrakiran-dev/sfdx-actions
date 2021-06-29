@@ -6336,15 +6336,15 @@ async function run(){
     const {context = {}} = _actions_github__WEBPACK_IMPORTED_MODULE_1__;
     console.log('context', context)
     
-    /*const { data } = await octokit.rest.issues.get({
-        ...context.repo,
+    const { data } = await octokit.rest.issues.get({
+        ...context.repository,
         ISSUE_NUMBER
     });
 
     console.log('data', data)
 
 
-    core.setOutput('BRANCH_NAME', data.title);*/
+    _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('BRANCH_NAME', data.title);
 }
 
 run(); 

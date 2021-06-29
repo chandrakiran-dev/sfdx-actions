@@ -5,22 +5,19 @@ async function run(){
     console.log('INSIDE RUN')
     const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
     const ISSUE_NUMBER = core.getInput('ISSUE_NUMBER');
-    console.log('GITHUB_TOKEN', GITHUB_TOKEN)
-    console.log('ISSUE_NUMBER', ISSUE_NUMBER)
+    const PROJECT_PREFIX = core.getInput('PROJECT_PREFIX');
+    
     const octokit = new github.getOctokit(GITHUB_TOKEN);
 
     const {context = {}} = github;
-    console.log('context', context)
     
     const { data } = await octokit.rest.issues.get({
         ...context.repo,
         issue_number: ISSUE_NUMBER
     });
 
-    console.log('data', data)
-
-
-    core.setOutput('BRANCH_NAME', data.title);
+    const branchName = 'feature/' + PROJECT_PREFIX + '-' + ISSUE_NUMBER + '-' + data.title.replace(' ', '-')
+    core.setOutput('BRANCH_NAME',branchName);
 }
 
 run(); 

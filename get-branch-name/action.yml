@@ -8,6 +8,9 @@ inputs:
   ISSUE_NUMBER:
     description: "Issue Number"
     required: true
+  PROJECT_PREFIX:
+    description: "Project prefix"
+    required: true
 outputs:
   BRANCH_NAME:
     description: "Branch name."

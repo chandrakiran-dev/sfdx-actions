@@ -6329,22 +6329,19 @@ async function run(){
     console.log('INSIDE RUN')
     const GITHUB_TOKEN = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('GITHUB_TOKEN');
     const ISSUE_NUMBER = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('ISSUE_NUMBER');
-    console.log('GITHUB_TOKEN', GITHUB_TOKEN)
-    console.log('ISSUE_NUMBER', ISSUE_NUMBER)
+    const PROJECT_PREFIX = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('PROJECT_PREFIX');
+    
     const octokit = new _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(GITHUB_TOKEN);
 
     const {context = {}} = _actions_github__WEBPACK_IMPORTED_MODULE_1__;
-    console.log('context', context)
     
     const { data } = await octokit.rest.issues.get({
         ...context.repo,
         issue_number: ISSUE_NUMBER
     });
 
-    console.log('data', data)
-
-
-    _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('BRANCH_NAME', data.title);
+    const branchName = 'feature/' + PROJECT_PREFIX + '-' + ISSUE_NUMBER + '-' + data.title.replace(' ', '-')
+    _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('BRANCH_NAME',branchName);
 }
 
 run(); 

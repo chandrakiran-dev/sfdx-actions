@@ -16,8 +16,8 @@ async function run(){
         issue_number: ISSUE_NUMBER
     });
 
-    const branchName = 'feature/' + data.title.replace(/ /g, '-').replace(/[/g, '').replace(/]/g, '-') + '-' + ISSUE_NUMBER
-    core.setOutput('BRANCH_NAME',branchName);
+    const branchName = 'feature/' + data.title.replace(/ /g, '-').replace('[', '').replace(']','-') + '-' + ISSUE_NUMBER
+    core.setOutput('BRANCH_NAME',branchName.toLowerCase());
 }
 
 run(); 

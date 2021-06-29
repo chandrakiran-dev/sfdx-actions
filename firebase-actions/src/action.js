@@ -13,9 +13,9 @@ async function run(){
 
     // Authenticate a JWT client with the service account.
     var jwtClient = new google.auth.JWT(
-        serviceAccount.client_email,
+        FIREBASE_CLIENT_EMAIL,
         null,
-        serviceAccount.private_key,
+        FIREBASE_PRIVATE_KEY,
         scopes
     );
 

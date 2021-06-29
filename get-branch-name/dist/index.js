@@ -6327,14 +6327,15 @@ __nccwpck_require__.r(__webpack_exports__);
 
 async function run(){
     console.log('INSIDE RUN')
-    /*const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
-    const ISSUE_NUMBER = core.getInput('ISSUE_NUMBER');
-    const octokit = new github.getOctokit(GITHUB_TOKEN);
+    const GITHUB_TOKEN = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('GITHUB_TOKEN');
+    const ISSUE_NUMBER = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('ISSUE_NUMBER');
+    console.log('GITHUB_TOKEN', GITHUB_TOKEN)
+    console.log('ISSUE_NUMBER', ISSUE_NUMBER)
+    /*const octokit = new github.getOctokit(GITHUB_TOKEN);
 
     const {context = {}} = github;
     console.log('context', ...context.repo)
-    console.log('GITHUB_TOKEN', GITHUB_TOKEN)
-    console.log('ISSUE_NUMBER', ISSUE_NUMBER)
+    
     const { data } = await octokit.rest.issues.get({
         ...context.repo,
         ISSUE_NUMBER

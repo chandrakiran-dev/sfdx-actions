@@ -6340,10 +6340,9 @@ async function run(){
         issue_number: ISSUE_NUMBER
     });
 
-    const branchName = 'feature/' + data.title.replace(/ /g, '-').replace('[', '').replace(']','-') + '-' + ISSUE_NUMBER
+    const branchName = 'feature/' + data.title.replace(/ /g, '-').replace(/\[/g, '').replace(/]/g, '') + '-' + ISSUE_NUMBER
     _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('BRANCH_NAME',branchName.toLowerCase());
 }
-
 run(); 
 
 })();

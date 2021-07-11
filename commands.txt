@@ -1,0 +1,7 @@
+npm init
+
+yarn add @vercel/ncc
+npm install @actions/core
+npm install @actions/github
+
+yarn build

@@ -1,0 +1,19 @@
+name: "Get Branch Name"
+description: "This will check pull request already exist"
+author: "Chandra Kiran"
+inputs:
+  GITHUB_TOKEN:
+    description: "GitHub token"
+    required: true
+  ISSUE_NUMBER:
+    description: "Issue Number"
+    required: true
+  PROJECT_PREFIX:
+    description: "Project prefix"
+    required: true
+outputs:
+  IS_EXIST:
+    description: "Pull request already exist."
+runs:
+  using: "node12"
+  main: "dist/index.js"

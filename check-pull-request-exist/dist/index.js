@@ -6348,11 +6348,17 @@ async function run(){
     
     const { data } = await octokit.rest.pulls.list({
         ...context.repo,
-        state: 'all'
+        state: 'open'
     });
-    console.log('data', data);
+    let exist = false;
+    for(let record of data){
+        if(record.title.includes(issue)){
+            exist = true;
+            break;
+        }
+    }
     
-    _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('IS_EXIST',true);
+    _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('IS_EXIST',exist);
 }
 run(); 
 

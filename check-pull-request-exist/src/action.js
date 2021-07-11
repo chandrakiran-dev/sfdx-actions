@@ -15,10 +15,16 @@ async function run(){
     
     const { data } = await octokit.rest.pulls.list({
         ...context.repo,
-        state: 'all'
+        state: 'open'
     });
-    console.log('data', data);
+    let exist = false;
+    for(let record of data){
+        if(record.title.includes(issue)){
+            exist = true;
+            break;
+        }
+    }
     
-    core.setOutput('IS_EXIST',true);
+    core.setOutput('IS_EXIST',exist);
 }
 run(); 

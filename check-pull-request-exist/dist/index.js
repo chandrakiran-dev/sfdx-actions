@@ -6343,7 +6343,7 @@ async function run(){
     const issue = PROJECT_PREFIX + '-' + ISSUE_NUMBER
     
     const octokit = new _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(GITHUB_TOKEN);
-
+    console.log('issue', issue);
     const {context = {}} = _actions_github__WEBPACK_IMPORTED_MODULE_1__;
     
     const { data } = await octokit.rest.pulls.list({

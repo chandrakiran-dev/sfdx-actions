@@ -10,7 +10,7 @@ async function run(){
     const issue = PROJECT_PREFIX + '-' + ISSUE_NUMBER
     
     const octokit = new github.getOctokit(GITHUB_TOKEN);
-
+    console.log('issue', issue);
     const {context = {}} = github;
     
     const { data } = await octokit.rest.pulls.list({

@@ -15,7 +15,7 @@ async function run(){
     
     const { data } = await octokit.rest.pulls.list({
         ...context.repo,
-        state: 'open'
+        state: 'all'
     });
     console.log('data', data);
     

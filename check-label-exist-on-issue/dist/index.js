@@ -6351,6 +6351,8 @@ async function run(){
 
     let isExist = false;
     let labels = data.labels || [];
+    console.log('data', data);
+    console.log('labels', labels);
     for(let label of labels){
         if(label.name.toUpperCase().includes(LABEL.toUpperCase())){
             isExist = true;

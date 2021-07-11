@@ -10,7 +10,7 @@ async function run(){
     const octokit = new github.getOctokit(GITHUB_TOKEN);
 
     const {context = {}} = github;
-    
+    console.log('ISSUE_NUMBER', ISSUE_NUMBER);
     const { data } = await octokit.rest.issues.get({
         ...context.repo,
         issue_number: ISSUE_NUMBER

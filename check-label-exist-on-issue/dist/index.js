@@ -6343,7 +6343,7 @@ async function run(){
     const octokit = new _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(GITHUB_TOKEN);
 
     const {context = {}} = _actions_github__WEBPACK_IMPORTED_MODULE_1__;
-    
+    console.log('ISSUE_NUMBER', ISSUE_NUMBER);
     const { data } = await octokit.rest.issues.get({
         ...context.repo,
         issue_number: ISSUE_NUMBER
